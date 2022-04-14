@@ -1,0 +1,987 @@
+{
+
+  "Routes": [
+
+    {
+      "DownstreamPathTemplate": "/api/Product",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product",
+      "UpstreamHttpMethod": 
+        "GET"
+      
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/RemoveRange",
+      "DownstreamHeaderTransform": {
+        "ids": "[]"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/RemoveRange",
+      "UpstreamHttpMethod": [
+
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Add",
+      "DownstreamHeaderTransform": {
+        "productitem": "{id,iditem,price,iduser}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Add",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Update",
+      "DownstreamHeaderTransform": {
+        "productitem": "{id,iditem,price,iduser}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Update",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/ByExpression",
+      "DownstreamHeaderTransform": {
+        "productitem": "{productitem}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+
+      "UpstreamPathTemplate": "/Product/ByExpression",
+      "UpstreamHttpMethod": [
+        "GET"
+
+      ]
+    },
+    ////////////////////////////////////////////////////////
+    //Character
+    ///////////////////////////////////////////////////
+    {
+      "DownstreamPathTemplate": "/api/Product/Character",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Character",
+      "UpstreamHttpMethod": [
+        "GET"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Character/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Character/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Character/RemoveRange",
+      "DownstreamHeaderTransform": {
+        "ids": "[]"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Character/RemoveRange",
+      "UpstreamHttpMethod": [
+
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Character/Add",
+      "DownstreamHeaderTransform": {
+        "character": "{id,character1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Character/Add",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Character/Update",
+      "DownstreamHeaderTransform": {
+        "character": "{id,character1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Character/Update",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Character/ByExpression",
+      "DownstreamHeaderTransform": {
+        "character": ""
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Character/ByExpression",
+      "UpstreamHttpMethod": [
+        "GET"
+
+      ]
+    },
+    /////////////////////////////////////
+    ////Game
+    ////////////////////////////////////
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Game",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Game",
+      "UpstreamHttpMethod": [
+        "GET"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Game/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Game/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Game/RemoveRange",
+      "DownstreamHeaderTransform": {
+        "ids": "[]"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Game/RemoveRange",
+      "UpstreamHttpMethod": [
+
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Game/Add",
+      "DownstreamHeaderTransform": {
+        "game": "{id,game1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Game/Add",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Character/Update",
+      "DownstreamHeaderTransform": {
+        "game": "{id,game1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Game/Update",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Game/ByExpression",
+      "DownstreamHeaderTransform": {
+        "game": ""
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Game/ByExpression",
+      "UpstreamHttpMethod": [
+        "GET"
+
+      ]
+    },
+    ////////////////////////////
+    ///Quality
+    ///////////////////////////
+    {
+      "DownstreamPathTemplate": "/api/Product/Quality",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Quality",
+      "UpstreamHttpMethod": [
+        "GET"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Quality/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Quality/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Quality/RemoveRange",
+      "DownstreamHeaderTransform": {
+        "ids": "[]"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Quality/RemoveRange",
+      "UpstreamHttpMethod": [
+
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Quality/Add",
+      "DownstreamHeaderTransform": {
+        "quality": "{id,quality1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Quality/Add",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Quality/Update",
+      "DownstreamHeaderTransform": {
+        "quality": "{id,quality1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Quality/Update",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Quality/ByExpression",
+      "DownstreamHeaderTransform": {
+        "quality": ""
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Quality/ByExpression",
+      "UpstreamHttpMethod": [
+        "GET"
+
+      ]
+    },
+    ////////////////////////
+    ///Rarity
+    //////////////////////
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Rarity",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Rarity",
+      "UpstreamHttpMethod": [
+        "GET"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Rarity/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Rarity/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Rarity/RemoveRange",
+      "DownstreamHeaderTransform": {
+        "ids": "[]"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Rarity/RemoveRange",
+      "UpstreamHttpMethod": [
+
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Rarity/Add",
+      "DownstreamHeaderTransform": {
+        "rarity": "{id,rarity1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Rarity/Add",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Rarity/Update",
+      "DownstreamHeaderTransform": {
+        "rarity": "{id,rarity1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Rarity/Update",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Rarity/ByExpression",
+      "DownstreamHeaderTransform": {
+        "rarity": ""
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Rarity/ByExpression",
+      "UpstreamHttpMethod": [
+        "GET"
+
+      ]
+    },
+    /////////////////////////////
+    ///Slot
+    ////////////////////////////
+    {
+      "DownstreamPathTemplate": "/api/Product/Slot",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Slot",
+      "UpstreamHttpMethod": [
+        "GET"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Slot/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Slot/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Slot/RemoveRange",
+      "DownstreamHeaderTransform": {
+        "ids": "[]"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Slot/AddRange",
+      "UpstreamHttpMethod": [
+
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Character/Add",
+      "DownstreamHeaderTransform": {
+        "slot": "{id,slot1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Slot/Add",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Slot/Update",
+      "DownstreamHeaderTransform": {
+        "slot": "{id,slot1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Slot/Update",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Slot/ByExpression",
+      "DownstreamHeaderTransform": {
+        "slot": ""
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Slot/ByExpression",
+      "UpstreamHttpMethod": [
+        "GET"
+
+      ]
+    },
+
+    //////////////////////////////////////////
+    ////TypeOfItem
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Type",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Type",
+      "UpstreamHttpMethod": [
+        "GET"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Type/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Type/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Type/RemoveRange",
+      "DownstreamHeaderTransform": {
+        "ids": "[]"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Type/RemoveRange",
+      "UpstreamHttpMethod": [
+
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Type/Add",
+      "DownstreamHeaderTransform": {
+        "type": "{id,type1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Type/Add",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Type/Update",
+      "DownstreamHeaderTransform": {
+        "productitem": "{id,type1}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Type/Update",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Type/ByExpression",
+      "DownstreamHeaderTransform": {
+        "type": ""
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Type/ByExpression",
+      "UpstreamHttpMethod": [
+        "GET"
+
+      ]
+    },
+    //////////////////////////////////////////
+    ///Item
+    /////////////////////////////////////////
+    {
+      "DownstreamPathTemplate": "/api/Product/Item",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Item",
+      "UpstreamHttpMethod": [
+        "GET"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Item/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Item/{id}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Item/RemoveRange",
+      "DownstreamHeaderTransform": {
+        "ids": "[]"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Item/RemoveRange",
+      "UpstreamHttpMethod": [
+
+        "Delete"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Item/Add",
+      "DownstreamHeaderTransform": {
+        "item": "{id,name, idgame,idcharacter,idquality,idslot,idtype,idrarity,description}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Item/Add",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Item/Update",
+      "DownstreamHeaderTransform": {
+        "item": "{id,name, idgame,idcharacter,idquality,idslot,idtype,idrarity,description}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Item/Update",
+      "UpstreamHttpMethod": [
+        "PUT"
+
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Product/Item/ByExpression",
+      "DownstreamHeaderTransform": {
+        "item": "{item}"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false
+      },
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7170"
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/Item/ByExpression",
+      "UpstreamHttpMethod": [
+        "GET"
+
+      ]
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+  ]
+}

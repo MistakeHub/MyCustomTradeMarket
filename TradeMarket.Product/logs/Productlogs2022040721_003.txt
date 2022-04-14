@@ -1,0 +1,4 @@
+2022-04-07 21:16:03.039 +03:00 [INF] TradeMarket.Product.sakila.Game has been added
+2022-04-07 21:17:03.999 +03:00 [INF] TradeMarket.Product.sakila.Game has been added
+2022-04-07 21:17:13.148 +03:00 [INF] TradeMarket.Product.sakila.Game has been added
+2022-04-07 21:20:30.121 +03:00 [INF] TradeMarket.Product.sakila.Game has been added

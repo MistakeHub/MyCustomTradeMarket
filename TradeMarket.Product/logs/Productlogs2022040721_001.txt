@@ -1,0 +1,1 @@
+2022-04-07 21:15:40.899 +03:00 [INF] TradeMarket.Product.sakila.Game has been added

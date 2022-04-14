@@ -1,0 +1,87 @@
+2022-04-08 17:28:44.479 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-08 17:28:44.502 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-08 17:28:44.505 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-08 17:28:44.505 +03:00 [INF] Hosting environment: Development
+2022-04-08 17:28:44.505 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-08 17:28:44.711 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-08 17:28:45.016 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 309.8900ms
+2022-04-08 17:28:45.100 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-08 17:28:45.103 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 3.1297ms
+2022-04-08 17:28:45.931 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-08 17:28:46.054 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 122.9085ms
+2022-04-08 17:28:46.553 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product - 0
+2022-04-08 17:28:46.558 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ProductController.Get (TradeMarket.Product)'
+2022-04-08 17:28:46.581 +03:00 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Game] Get(Int32) on controller TradeMarket.Product.Controllers.ProductController (TradeMarket.Product).
+2022-04-08 17:28:47.712 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-08 17:28:48.119 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`Game`
+FROM `games` AS `g`
+WHERE `g`.`Id` = @__id_0
+LIMIT 1
+2022-04-08 17:28:48.138 +03:00 [INF] Get Entity type TradeMarket.Product.sakila.Game with id:0
+2022-04-08 17:28:48.144 +03:00 [INF] Executing ObjectResult, writing value of type 'null'.
+2022-04-08 17:28:48.148 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ProductController.Get (TradeMarket.Product) in 1562.1926ms
+2022-04-08 17:28:48.149 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ProductController.Get (TradeMarket.Product)'
+2022-04-08 17:28:48.154 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product - 0 - 204 0 - 1601.2676ms
+2022-04-08 17:28:48.178 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product?id=1 - 0
+2022-04-08 17:28:48.178 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ProductController.Get (TradeMarket.Product)'
+2022-04-08 17:28:48.178 +03:00 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Game] Get(Int32) on controller TradeMarket.Product.Controllers.ProductController (TradeMarket.Product).
+2022-04-08 17:28:48.233 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-08 17:28:48.239 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`Game`
+FROM `games` AS `g`
+WHERE `g`.`Id` = @__id_0
+LIMIT 1
+2022-04-08 17:28:48.282 +03:00 [INF] Get Entity type TradeMarket.Product.sakila.Game with id:1
+2022-04-08 17:28:48.282 +03:00 [INF] Executing ObjectResult, writing value of type 'Castle.Proxies.GameProxy'.
+2022-04-08 17:28:48.382 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idgame` = @__p_0
+2022-04-08 17:28:48.425 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Character`
+FROM `characters` AS `c`
+WHERE `c`.`Id` = @__p_0
+2022-04-08 17:28:48.438 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idcharacter` = @__p_0
+2022-04-08 17:28:48.459 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`Quality`
+FROM `qualities` AS `q`
+WHERE `q`.`Id` = @__p_0
+2022-04-08 17:28:48.470 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idquality` = @__p_0
+2022-04-08 17:28:48.477 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Rarity`
+FROM `rarities` AS `r`
+WHERE `r`.`Id` = @__p_0
+2022-04-08 17:28:48.489 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idrarity` = @__p_0
+2022-04-08 17:28:48.496 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Slot`
+FROM `slots` AS `s`
+WHERE `s`.`Id` = @__p_0
+2022-04-08 17:28:48.507 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idslot` = @__p_0
+2022-04-08 17:28:48.514 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Type`
+FROM `types` AS `t`
+WHERE `t`.`Id` = @__p_0
+2022-04-08 17:28:48.525 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idtype` = @__p_0
+2022-04-08 17:28:48.532 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`iditem`, `p`.`iduser`, `p`.`price`
+FROM `product` AS `p`
+WHERE `p`.`iditem` = @__p_0
+2022-04-08 17:28:48.547 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ProductController.Get (TradeMarket.Product) in 368.1314ms
+2022-04-08 17:28:48.547 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ProductController.Get (TradeMarket.Product)'
+2022-04-08 17:28:48.547 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product?id=1 - 0 - 200 565 application/json;+charset=utf-8 369.2717ms

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "hkuvsNb+dgVkjjngZ5x5NeT1a45MIqN378hQ1dlsrNY=",
+  "Source": "TradeMarket.ApiGateway",
+  "BasePath": "_content/TradeMarket.ApiGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
