@@ -35,7 +35,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/RemoveRange",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "ids": "[]"
       },
       "HttpHandlerOptions": {
@@ -57,8 +57,8 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Add",
-      "DownstreamHeaderTransform": {
-        "productitem": "{id,iditem,price,iduser}"
+      "DownstreamRequestBody": {
+        "productitem": "{id:,iditem:,price:,iduser:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -72,14 +72,14 @@
       ],
       "UpstreamPathTemplate": "/Product/Add",
       "UpstreamHttpMethod": [
-        "PUT"
+        "POST"
 
       ]
     },
 
     {
       "DownstreamPathTemplate": "/api/Product/Update",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "productitem": "{id,iditem,price,iduser}"
       },
       "HttpHandlerOptions": {
@@ -101,8 +101,8 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/ByExpression",
-      "DownstreamHeaderTransform": {
-        "productitem": "{productitem}"
+      "DownstreamRequestBody": {
+        "productitem": ""
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -157,7 +157,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Character/RemoveRange",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "ids": "[]"
       },
       "HttpHandlerOptions": {
@@ -179,8 +179,8 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Character/Add",
-      "DownstreamHeaderTransform": {
-        "character": "{id,character1}"
+      "DownstreamRequestBody": {
+        "character": "{id:,character1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -194,15 +194,15 @@
       ],
       "UpstreamPathTemplate": "/Product/Character/Add",
       "UpstreamHttpMethod": [
-        "PUT"
+        "POST"
 
       ]
     },
 
     {
       "DownstreamPathTemplate": "/api/Product/Character/Update",
-      "DownstreamHeaderTransform": {
-        "character": "{id,character1}"
+      "DownstreamRequestBody": {
+        "character": "{id:,character1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -223,7 +223,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Character/ByExpression",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "character": ""
       },
       "HttpHandlerOptions": {
@@ -279,7 +279,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Game/RemoveRange",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "ids": "[]"
       },
       "HttpHandlerOptions": {
@@ -301,8 +301,8 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Game/Add",
-      "DownstreamHeaderTransform": {
-        "game": "{id,game1}"
+      "DownstreamRequestBody": {
+        "game": "{id:,game1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -316,15 +316,15 @@
       ],
       "UpstreamPathTemplate": "/Product/Game/Add",
       "UpstreamHttpMethod": [
-        "PUT"
+        "POST"
 
       ]
     },
 
     {
       "DownstreamPathTemplate": "/api/Product/Character/Update",
-      "DownstreamHeaderTransform": {
-        "game": "{id,game1}"
+      "DownstreamRequestBody": {
+        "game": "{id:,game1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -345,7 +345,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Game/ByExpression",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "game": ""
       },
       "HttpHandlerOptions": {
@@ -400,7 +400,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Quality/RemoveRange",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "ids": "[]"
       },
       "HttpHandlerOptions": {
@@ -422,8 +422,8 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Quality/Add",
-      "DownstreamHeaderTransform": {
-        "quality": "{id,quality1}"
+      "DownstreamRequestBody": {
+        "quality": "{id:0,quality1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -437,15 +437,15 @@
       ],
       "UpstreamPathTemplate": "/Product/Quality/Add",
       "UpstreamHttpMethod": [
-        "PUT"
+        "POST"
 
       ]
     },
 
     {
       "DownstreamPathTemplate": "/api/Product/Quality/Update",
-      "DownstreamHeaderTransform": {
-        "quality": "{id,quality1}"
+      "DownstreamRequestBody": {
+        "quality": "{id:,quality1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -466,8 +466,8 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Quality/ByExpression",
-      "DownstreamHeaderTransform": {
-        "quality": ""
+      "DownstreamRequestBody": {
+        "quality": "{quality1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -522,7 +522,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Rarity/RemoveRange",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "ids": "[]"
       },
       "HttpHandlerOptions": {
@@ -544,7 +544,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Rarity/Add",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "rarity": "{id,rarity1}"
       },
       "HttpHandlerOptions": {
@@ -559,15 +559,15 @@
       ],
       "UpstreamPathTemplate": "/Product/Rarity/Add",
       "UpstreamHttpMethod": [
-        "PUT"
+        "POST"
 
       ]
     },
 
     {
       "DownstreamPathTemplate": "/api/Product/Rarity/Update",
-      "DownstreamHeaderTransform": {
-        "rarity": "{id,rarity1}"
+      "DownstreamRequestBody": {
+        "rarity": "{id:,rarity1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -588,7 +588,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Rarity/ByExpression",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "rarity": ""
       },
       "HttpHandlerOptions": {
@@ -643,7 +643,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Slot/RemoveRange",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "ids": "[]"
       },
       "HttpHandlerOptions": {
@@ -665,8 +665,8 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Character/Add",
-      "DownstreamHeaderTransform": {
-        "slot": "{id,slot1}"
+      "DownstreamRequestBody": {
+        "slot": "{id:,slot1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -680,15 +680,15 @@
       ],
       "UpstreamPathTemplate": "/Product/Slot/Add",
       "UpstreamHttpMethod": [
-        "PUT"
+        "POST"
 
       ]
     },
 
     {
       "DownstreamPathTemplate": "/api/Product/Slot/Update",
-      "DownstreamHeaderTransform": {
-        "slot": "{id,slot1}"
+      "DownstreamRequestBody": {
+        "slot": "{id:,slot1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -709,7 +709,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Slot/ByExpression",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "slot": ""
       },
       "HttpHandlerOptions": {
@@ -765,7 +765,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Type/RemoveRange",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "ids": "[]"
       },
       "HttpHandlerOptions": {
@@ -787,8 +787,8 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Type/Add",
-      "DownstreamHeaderTransform": {
-        "type": "{id,type1}"
+      "DownstreamRequestBody": {
+        "type": "{id:,type1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -802,15 +802,15 @@
       ],
       "UpstreamPathTemplate": "/Product/Type/Add",
       "UpstreamHttpMethod": [
-        "PUT"
+        "POST"
 
       ]
     },
 
     {
       "DownstreamPathTemplate": "/api/Product/Type/Update",
-      "DownstreamHeaderTransform": {
-        "productitem": "{id,type1}"
+      "DownstreamRequestBody": {
+        "productitem": "{id:,type1:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -831,7 +831,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Type/ByExpression",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "type": ""
       },
       "HttpHandlerOptions": {
@@ -886,7 +886,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Item/RemoveRange",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "ids": "[]"
       },
       "HttpHandlerOptions": {
@@ -908,8 +908,8 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Item/Add",
-      "DownstreamHeaderTransform": {
-        "item": "{id,name, idgame,idcharacter,idquality,idslot,idtype,idrarity,description}"
+      "DownstreamRequestBody": {
+        "item": "{id:,name:, idgame:,idcharacter:,idquality:,idslot:,idtype:,idrarity:,description:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -923,15 +923,15 @@
       ],
       "UpstreamPathTemplate": "/Product/Item/Add",
       "UpstreamHttpMethod": [
-        "PUT"
+        "POST"
 
       ]
     },
 
     {
       "DownstreamPathTemplate": "/api/Product/Item/Update",
-      "DownstreamHeaderTransform": {
-        "item": "{id,name, idgame,idcharacter,idquality,idslot,idtype,idrarity,description}"
+      "DownstreamRequestBody": {
+        "item": "{id:,name:, idgame:,idcharacter:,idquality:,idslot:,idtype:,idrarity:,description:}"
       },
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false
@@ -952,7 +952,7 @@
 
     {
       "DownstreamPathTemplate": "/api/Product/Item/ByExpression",
-      "DownstreamHeaderTransform": {
+      "DownstreamRequestBody": {
         "item": "{item}"
       },
       "HttpHandlerOptions": {

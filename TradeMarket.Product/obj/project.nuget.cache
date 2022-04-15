@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "aGLjcUgTGUNNArxFu8LHP1eEX8jCypW0dV9oOvNSAk3xu3G49NmSwx8In91L1SVb6YEY/ZSzutPoNjXa+MZTIQ==",
+  "dgSpecHash": "YTRdkKVJ7t879CIzm1/iUXn3MxiNmCPz1IuJ3eMX4EeoJmGifUz0tOT4o+Fmon+a0ycGk0lEtvxoU9KrpHPPIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mistake22\\source\\repos\\TradeMarket\\TradeMarket.Product\\TradeMarket.Product.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Mistake22\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Mistake22\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Mistake22\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Mistake22\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Mistake22\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

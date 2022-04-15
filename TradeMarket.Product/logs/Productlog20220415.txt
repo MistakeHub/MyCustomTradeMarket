@@ -1,0 +1,1101 @@
+2022-04-15 14:28:16.770 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 14:28:16.807 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 14:28:16.814 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 14:28:16.815 +03:00 [INF] Hosting environment: Development
+2022-04-15 14:28:16.815 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 14:28:16.924 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger - -
+2022-04-15 14:28:17.057 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger - - - 301 0 - 136.4287ms
+2022-04-15 14:28:17.070 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:28:17.303 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 232.8689ms
+2022-04-15 14:28:17.368 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - -
+2022-04-15 14:28:17.369 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui-bundle.js - -
+2022-04-15 14:28:17.369 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui-standalone-preset.js - -
+2022-04-15 14:28:17.369 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:28:17.371 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 1.2836ms
+2022-04-15 14:28:17.417 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-04-15 14:28:17.417 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-04-15 14:28:17.417 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 47.4104ms
+2022-04-15 14:28:17.417 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - - - 200 143632 text/css 48.5842ms
+2022-04-15 14:28:17.424 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-04-15 14:28:17.424 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 54.6159ms
+2022-04-15 14:28:17.709 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:28:17.941 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 232.0078ms
+2022-04-15 14:28:29.259 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Product - -
+2022-04-15 14:28:29.284 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ProductController.GetAll (TradeMarket.Product)'
+2022-04-15 14:28:29.307 +03:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[TradeMarket.Product.ViewModels.ProductViewModel]] GetAll() on controller TradeMarket.Product.Controllers.ProductController (TradeMarket.Product).
+2022-04-15 14:28:30.412 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 14:28:30.760 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`iditem`, `p`.`iduser`, `p`.`price`
+FROM `product` AS `p`
+2022-04-15 14:28:30.962 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`Id` = @__p_0
+2022-04-15 14:28:31.005 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`Quality`
+FROM `qualities` AS `q`
+WHERE `q`.`Id` = @__p_0
+2022-04-15 14:28:31.020 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Rarity`
+FROM `rarities` AS `r`
+WHERE `r`.`Id` = @__p_0
+2022-04-15 14:28:31.034 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Slot`
+FROM `slots` AS `s`
+WHERE `s`.`Id` = @__p_0
+2022-04-15 14:28:31.047 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Character`
+FROM `characters` AS `c`
+WHERE `c`.`Id` = @__p_0
+2022-04-15 14:28:31.061 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`Game`
+FROM `games` AS `g`
+WHERE `g`.`Id` = @__p_0
+2022-04-15 14:28:31.074 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Type`
+FROM `types` AS `t`
+WHERE `t`.`Id` = @__p_0
+2022-04-15 14:28:31.082 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[TradeMarket.Product.ViewModels.ProductViewModel, TradeMarket.Product, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-04-15 14:28:31.185 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ProductController.GetAll (TradeMarket.Product) in 1873.7572ms
+2022-04-15 14:28:31.186 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ProductController.GetAll (TradeMarket.Product)'
+2022-04-15 14:28:31.190 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Product - - - 200 157 application/json;+charset=utf-8 1931.2356ms
+2022-04-15 14:35:05.112 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 14:35:05.136 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 14:35:05.138 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 14:35:05.139 +03:00 [INF] Hosting environment: Development
+2022-04-15 14:35:05.139 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 14:35:05.366 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:35:05.647 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 284.4825ms
+2022-04-15 14:35:05.669 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:35:05.671 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 2.8529ms
+2022-04-15 14:35:06.346 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:35:06.455 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - -
+2022-04-15 14:35:06.464 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-04-15 14:35:06.464 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - - - 200 628 image/png 9.2754ms
+2022-04-15 14:35:06.504 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 157.8192ms
+2022-04-15 14:36:00.761 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 927
+2022-04-15 14:36:00.767 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 14:36:00.810 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 14:36:00.945 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:36:00.984 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 169.1916ms
+2022-04-15 14:36:00.985 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 14:36:00.985 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 927 - 400 1422 application/problem+json;+charset=utf-8 224.4154ms
+2022-04-15 14:37:53.698 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151
+2022-04-15 14:37:53.701 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:37:53.704 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:37:53.707 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:37:53.708 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 3.7293ms
+2022-04-15 14:37:53.708 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:37:53.708 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151 - 400 1539 application/problem+json;+charset=utf-8 9.8432ms
+2022-04-15 14:39:12.680 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151
+2022-04-15 14:39:12.681 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:39:12.681 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:39:12.682 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:39:12.682 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 1.2983ms
+2022-04-15 14:39:12.682 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:39:12.682 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151 - 400 1539 application/problem+json;+charset=utf-8 2.8661ms
+2022-04-15 14:41:22.287 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 14:41:22.312 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 14:41:22.315 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 14:41:22.315 +03:00 [INF] Hosting environment: Development
+2022-04-15 14:41:22.315 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 14:41:22.782 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:41:23.026 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 247.2582ms
+2022-04-15 14:41:23.107 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:41:23.110 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 3.3431ms
+2022-04-15 14:41:23.265 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:41:23.940 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 675.0719ms
+2022-04-15 14:42:00.340 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151
+2022-04-15 14:42:00.348 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:42:00.372 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:42:00.612 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:42:00.657 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 279.3622ms
+2022-04-15 14:42:00.658 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:42:00.658 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151 - 400 1539 application/problem+json;+charset=utf-8 318.1852ms
+2022-04-15 14:42:05.040 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151
+2022-04-15 14:42:05.055 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:42:05.056 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:42:05.061 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:42:05.062 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 5.9831ms
+2022-04-15 14:42:05.062 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:42:05.062 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151 - 400 1539 application/problem+json;+charset=utf-8 22.4358ms
+2022-04-15 14:42:44.895 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 14:42:44.936 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 14:42:44.940 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 14:42:44.941 +03:00 [INF] Hosting environment: Development
+2022-04-15 14:42:44.941 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 14:42:45.709 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:42:46.019 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 313.0937ms
+2022-04-15 14:42:46.054 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:42:46.057 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 2.5188ms
+2022-04-15 14:42:46.551 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:42:46.820 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 269.2366ms
+2022-04-15 14:43:05.885 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1144
+2022-04-15 14:43:05.891 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:43:05.920 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:43:06.116 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:43:06.169 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 240.2189ms
+2022-04-15 14:43:06.171 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:43:06.171 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1144 - 400 1539 application/problem+json;+charset=utf-8 286.4464ms
+2022-04-15 14:47:24.931 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 14:47:24.964 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 14:47:24.968 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 14:47:24.968 +03:00 [INF] Hosting environment: Development
+2022-04-15 14:47:24.968 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 14:47:25.791 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:47:26.037 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 249.7717ms
+2022-04-15 14:47:26.105 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:47:26.108 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 2.7490ms
+2022-04-15 14:47:26.408 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:47:26.620 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 211.5753ms
+2022-04-15 14:47:31.046 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151
+2022-04-15 14:47:31.051 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:47:31.078 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:47:31.268 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:47:31.317 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 233.6727ms
+2022-04-15 14:47:31.318 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:47:31.318 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151 - 400 1539 application/problem+json;+charset=utf-8 272.6919ms
+2022-04-15 14:48:30.436 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 14:48:30.488 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 14:48:30.555 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 14:48:30.556 +03:00 [INF] Hosting environment: Development
+2022-04-15 14:48:30.556 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 14:48:32.261 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:48:32.958 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 701.3143ms
+2022-04-15 14:48:33.855 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:48:33.858 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 2.8239ms
+2022-04-15 14:48:34.340 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:48:34.488 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 147.3989ms
+2022-04-15 14:48:34.744 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151
+2022-04-15 14:48:34.751 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:48:34.811 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:48:34.841 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:48:35.003 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 184.675ms
+2022-04-15 14:48:35.004 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:48:35.004 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 1151 - 400 249 application/problem+json;+charset=utf-8 260.2165ms
+2022-04-15 14:49:19.629 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 70
+2022-04-15 14:49:19.632 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:49:19.632 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:49:19.633 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:49:19.634 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 1.2458ms
+2022-04-15 14:49:19.634 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:49:19.634 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 70 - 400 249 application/problem+json;+charset=utf-8 4.5182ms
+2022-04-15 14:49:42.377 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 69
+2022-04-15 14:49:42.377 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:49:42.377 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:49:42.378 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:49:42.378 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 0.5524ms
+2022-04-15 14:49:42.378 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:49:42.378 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 69 - 400 249 application/problem+json;+charset=utf-8 1.1793ms
+2022-04-15 14:51:11.380 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 69
+2022-04-15 14:51:11.380 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:51:11.380 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:51:11.380 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:51:11.380 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 0.3251ms
+2022-04-15 14:51:11.380 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:51:11.380 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 69 - 400 249 application/problem+json;+charset=utf-8 0.8624ms
+2022-04-15 14:51:19.745 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 51
+2022-04-15 14:51:19.745 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:51:19.745 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:51:19.745 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:51:19.746 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 0.2906ms
+2022-04-15 14:51:19.746 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:51:19.746 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 51 - 400 249 application/problem+json;+charset=utf-8 0.6554ms
+2022-04-15 14:51:41.177 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 51
+2022-04-15 14:51:41.178 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:51:41.178 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:51:41.178 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 14:51:41.178 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 0.3792ms
+2022-04-15 14:51:41.178 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:51:41.178 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 51 - 400 249 application/problem+json;+charset=utf-8 1.1071ms
+2022-04-15 14:53:41.915 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 14:53:41.962 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 14:53:41.969 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 14:53:41.969 +03:00 [INF] Hosting environment: Development
+2022-04-15 14:53:41.969 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 14:53:42.439 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:53:42.720 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 283.5694ms
+2022-04-15 14:53:42.759 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:53:42.770 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 10.6379ms
+2022-04-15 14:53:43.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:53:43.356 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 218.5822ms
+2022-04-15 14:53:50.639 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 51
+2022-04-15 14:53:50.649 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:53:50.676 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:54:11.485 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 14:54:21.922 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 14:54:21.949 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 14:54:21.953 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 14:54:21.953 +03:00 [INF] Hosting environment: Development
+2022-04-15 14:54:21.953 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 14:54:22.222 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:54:23.706 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:54:24.159 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 452.0764ms
+2022-04-15 14:54:24.187 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 1956.2511ms
+2022-04-15 14:54:24.622 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:54:24.626 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 3.7123ms
+2022-04-15 14:54:25.295 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:54:25.296 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 0.4055ms
+2022-04-15 14:54:26.152 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:54:26.204 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - -
+2022-04-15 14:54:26.215 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-04-15 14:54:26.216 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - - - 200 628 image/png 12.0490ms
+2022-04-15 14:54:26.422 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 269.9336ms
+2022-04-15 14:54:27.181 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:54:27.243 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 62.6580ms
+2022-04-15 14:55:09.770 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 83
+2022-04-15 14:55:09.777 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:55:09.806 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:55:14.504 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 14:55:17.607 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:55:17.622 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 14.2601ms
+2022-04-15 14:55:17.739 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:55:17.739 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 0.1851ms
+2022-04-15 14:55:18.694 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:55:18.723 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 28.3142ms
+2022-04-15 14:55:19.604 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@p0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `qualities` (`Quality`)
+VALUES (@p0);
+SELECT `Id`
+FROM `qualities`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2022-04-15 14:55:20.839 +03:00 [INF] Quality: Id:2| Quality:Качественно сделано has been added
+2022-04-15 14:55:20.845 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2022-04-15 14:55:20.871 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 11059.1536ms
+2022-04-15 14:55:20.871 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 14:55:20.875 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 83 - 200 4 application/json;+charset=utf-8 11104.9486ms
+2022-04-15 14:58:18.213 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 14:58:18.238 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 14:58:18.242 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 14:58:18.242 +03:00 [INF] Hosting environment: Development
+2022-04-15 14:58:18.242 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 14:58:18.509 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 14:58:18.718 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 212.1063ms
+2022-04-15 14:58:18.749 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 14:58:18.752 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 3.1100ms
+2022-04-15 14:58:19.158 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 14:58:19.455 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 297.3537ms
+2022-04-15 14:58:37.368 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality - 0
+2022-04-15 14:58:37.373 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.GetAll (TradeMarket.Product)'
+2022-04-15 14:58:37.387 +03:00 [INF] Route matched with {action = "GetAll", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[TradeMarket.Product.sakila.Quality]] GetAll() on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 14:58:38.192 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 14:58:38.475 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`Quality`
+FROM `qualities` AS `q`
+2022-04-15 14:58:38.542 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[TradeMarket.Product.sakila.Quality, TradeMarket.Product.Core.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-04-15 14:58:38.731 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idquality` = @__p_0
+2022-04-15 14:58:38.764 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Character`
+FROM `characters` AS `c`
+WHERE `c`.`Id` = @__p_0
+2022-04-15 14:58:38.776 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idcharacter` = @__p_0
+2022-04-15 14:58:38.794 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`Game`
+FROM `games` AS `g`
+WHERE `g`.`Id` = @__p_0
+2022-04-15 14:58:38.804 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idgame` = @__p_0
+2022-04-15 14:58:38.810 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Rarity`
+FROM `rarities` AS `r`
+WHERE `r`.`Id` = @__p_0
+2022-04-15 14:58:38.820 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idrarity` = @__p_0
+2022-04-15 14:58:38.826 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Slot`
+FROM `slots` AS `s`
+WHERE `s`.`Id` = @__p_0
+2022-04-15 14:58:38.836 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idslot` = @__p_0
+2022-04-15 14:58:38.841 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Type`
+FROM `types` AS `t`
+WHERE `t`.`Id` = @__p_0
+2022-04-15 14:58:38.852 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idtype` = @__p_0
+2022-04-15 14:58:38.859 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`iditem`, `p`.`iduser`, `p`.`price`
+FROM `product` AS `p`
+WHERE `p`.`iditem` = @__p_0
+2022-04-15 14:58:38.874 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idquality` = @__p_0
+2022-04-15 14:58:38.881 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.GetAll (TradeMarket.Product) in 1490.0315ms
+2022-04-15 14:58:38.881 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.GetAll (TradeMarket.Product)'
+2022-04-15 14:58:38.884 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality - 0 - 200 581 application/json;+charset=utf-8 1515.9389ms
+2022-04-15 15:02:56.738 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add?quality application/json 96
+2022-04-15 15:02:56.740 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:02:56.750 +03:00 [INF] Route matched with {action = "Get", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Quality] Get(Int32) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:02:56.761 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:02:56.776 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product) in 25.8907ms
+2022-04-15 15:02:56.776 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:02:56.776 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add?quality application/json 96 - 400 241 application/problem+json;+charset=utf-8 38.4797ms
+2022-04-15 15:03:12.765 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add application/json 96
+2022-04-15 15:03:12.767 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:03:12.767 +03:00 [INF] Route matched with {action = "Get", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Quality] Get(Int32) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:03:12.769 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:03:12.769 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product) in 1.918ms
+2022-04-15 15:03:12.769 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:03:12.769 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add application/json 96 - 400 241 application/problem+json;+charset=utf-8 4.4851ms
+2022-04-15 15:03:35.277 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality/add application/json 96
+2022-04-15 15:03:35.277 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:03:35.277 +03:00 [INF] Route matched with {action = "Get", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Quality] Get(Int32) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:03:35.278 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:03:35.278 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product) in 0.442ms
+2022-04-15 15:03:35.278 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:03:35.278 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality/add application/json 96 - 400 241 application/problem+json;+charset=utf-8 0.9132ms
+2022-04-15 15:05:02.274 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 0
+2022-04-15 15:05:02.275 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 15:05:02.277 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:05:02.283 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:05:02.283 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 5.9684ms
+2022-04-15 15:05:02.283 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 15:05:02.284 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Quality/Add application/json-patch+json 0 - 400 292 application/problem+json;+charset=utf-8 9.4239ms
+2022-04-15 15:06:32.269 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add application/json 96
+2022-04-15 15:06:32.269 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:06:32.269 +03:00 [INF] Route matched with {action = "Get", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Quality] Get(Int32) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:06:32.269 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:06:32.269 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product) in 0.4333ms
+2022-04-15 15:06:32.269 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:06:32.270 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add application/json 96 - 400 241 application/problem+json;+charset=utf-8 0.9207ms
+2022-04-15 15:06:51.878 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add application/json 108
+2022-04-15 15:06:51.878 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:06:51.878 +03:00 [INF] Route matched with {action = "Get", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Quality] Get(Int32) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:06:51.878 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:06:51.879 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product) in 0.7262ms
+2022-04-15 15:06:51.879 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:06:51.879 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add application/json 108 - 400 241 application/problem+json;+charset=utf-8 1.1992ms
+2022-04-15 15:07:46.199 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add application/json 56
+2022-04-15 15:07:46.199 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:07:46.199 +03:00 [INF] Route matched with {action = "Get", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Quality] Get(Int32) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:07:46.199 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:07:46.200 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product) in 0.6898ms
+2022-04-15 15:07:46.200 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:07:46.200 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add application/json 56 - 400 241 application/problem+json;+charset=utf-8 1.0983ms
+2022-04-15 15:08:15.621 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add application/json 70
+2022-04-15 15:08:15.621 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:08:15.621 +03:00 [INF] Route matched with {action = "Get", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Quality] Get(Int32) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:08:15.621 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:08:15.621 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product) in 0.3758ms
+2022-04-15 15:08:15.621 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:08:15.621 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add application/json 70 - 400 241 application/problem+json;+charset=utf-8 0.7221ms
+2022-04-15 15:10:48.245 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 15:10:48.270 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 15:10:48.273 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 15:10:48.273 +03:00 [INF] Hosting environment: Development
+2022-04-15 15:10:48.273 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 15:10:48.500 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 15:10:48.825 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 332.2375ms
+2022-04-15 15:10:48.865 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 15:10:48.869 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 4.0828ms
+2022-04-15 15:10:49.565 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 15:10:49.753 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 187.1572ms
+2022-04-15 15:12:33.897 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality - 0
+2022-04-15 15:12:33.903 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.GetAll (TradeMarket.Product)'
+2022-04-15 15:12:33.916 +03:00 [INF] Route matched with {action = "GetAll", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[TradeMarket.Product.sakila.Quality]] GetAll() on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:12:34.731 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 15:12:35.015 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`Quality`
+FROM `qualities` AS `q`
+2022-04-15 15:12:35.077 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[TradeMarket.Product.sakila.Quality, TradeMarket.Product.Core.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-04-15 15:12:35.293 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idquality` = @__p_0
+2022-04-15 15:12:35.328 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Character`
+FROM `characters` AS `c`
+WHERE `c`.`Id` = @__p_0
+2022-04-15 15:12:35.340 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idcharacter` = @__p_0
+2022-04-15 15:12:35.357 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`Game`
+FROM `games` AS `g`
+WHERE `g`.`Id` = @__p_0
+2022-04-15 15:12:35.367 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idgame` = @__p_0
+2022-04-15 15:12:35.374 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Rarity`
+FROM `rarities` AS `r`
+WHERE `r`.`Id` = @__p_0
+2022-04-15 15:12:35.383 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idrarity` = @__p_0
+2022-04-15 15:12:35.390 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Slot`
+FROM `slots` AS `s`
+WHERE `s`.`Id` = @__p_0
+2022-04-15 15:12:35.400 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idslot` = @__p_0
+2022-04-15 15:12:35.406 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Type`
+FROM `types` AS `t`
+WHERE `t`.`Id` = @__p_0
+2022-04-15 15:12:35.415 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idtype` = @__p_0
+2022-04-15 15:12:35.422 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`iditem`, `p`.`iduser`, `p`.`price`
+FROM `product` AS `p`
+WHERE `p`.`iditem` = @__p_0
+2022-04-15 15:12:35.437 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idquality` = @__p_0
+2022-04-15 15:12:35.444 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.GetAll (TradeMarket.Product) in 1523.4988ms
+2022-04-15 15:12:35.444 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.GetAll (TradeMarket.Product)'
+2022-04-15 15:12:35.447 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality - 0 - 200 581 application/json;+charset=utf-8 1549.8434ms
+2022-04-15 15:12:41.092 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add - 0
+2022-04-15 15:12:41.094 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:12:41.105 +03:00 [INF] Route matched with {action = "Get", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Quality] Get(Int32) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:12:41.111 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:12:41.126 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product) in 20.8518ms
+2022-04-15 15:12:41.126 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:12:41.126 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add - 0 - 400 241 application/problem+json;+charset=utf-8 34.3821ms
+2022-04-15 15:13:16.211 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add?id=0&quality1=%22dasdas%22 - 0
+2022-04-15 15:13:16.212 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:13:16.212 +03:00 [INF] Route matched with {action = "Get", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[TradeMarket.Product.sakila.Quality] Get(Int32) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:13:16.216 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:13:16.216 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product) in 4.0751ms
+2022-04-15 15:13:16.216 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Get (TradeMarket.Product)'
+2022-04-15 15:13:16.216 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality/Add?id=0&quality1=%22dasdas%22 - 0 - 400 241 application/problem+json;+charset=utf-8 5.7341ms
+2022-04-15 15:15:35.204 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Product/Quality - 0
+2022-04-15 15:15:35.204 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.GetAll (TradeMarket.Product)'
+2022-04-15 15:15:35.204 +03:00 [INF] Route matched with {action = "GetAll", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[TradeMarket.Product.sakila.Quality]] GetAll() on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:15:35.248 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 15:15:35.249 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `q`.`Id`, `q`.`Quality`
+FROM `qualities` AS `q`
+2022-04-15 15:15:35.249 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[TradeMarket.Product.sakila.Quality, TradeMarket.Product.Core.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-04-15 15:15:35.250 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idquality` = @__p_0
+2022-04-15 15:15:35.252 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`Id`, `c`.`Character`
+FROM `characters` AS `c`
+WHERE `c`.`Id` = @__p_0
+2022-04-15 15:15:35.253 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idcharacter` = @__p_0
+2022-04-15 15:15:35.254 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `g`.`Id`, `g`.`Game`
+FROM `games` AS `g`
+WHERE `g`.`Id` = @__p_0
+2022-04-15 15:15:35.255 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idgame` = @__p_0
+2022-04-15 15:15:35.256 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`Rarity`
+FROM `rarities` AS `r`
+WHERE `r`.`Id` = @__p_0
+2022-04-15 15:15:35.257 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idrarity` = @__p_0
+2022-04-15 15:15:35.259 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`Slot`
+FROM `slots` AS `s`
+WHERE `s`.`Id` = @__p_0
+2022-04-15 15:15:35.260 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idslot` = @__p_0
+2022-04-15 15:15:35.262 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Type`
+FROM `types` AS `t`
+WHERE `t`.`Id` = @__p_0
+2022-04-15 15:15:35.263 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idtype` = @__p_0
+2022-04-15 15:15:35.264 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`iditem`, `p`.`iduser`, `p`.`price`
+FROM `product` AS `p`
+WHERE `p`.`iditem` = @__p_0
+2022-04-15 15:15:35.265 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `i`.`Id`, `i`.`description`, `i`.`idcharacter`, `i`.`idgame`, `i`.`idquality`, `i`.`idrarity`, `i`.`idslot`, `i`.`idtype`, `i`.`name`
+FROM `items` AS `i`
+WHERE `i`.`idquality` = @__p_0
+2022-04-15 15:15:35.265 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.GetAll (TradeMarket.Product) in 60.8582ms
+2022-04-15 15:15:35.265 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.GetAll (TradeMarket.Product)'
+2022-04-15 15:15:35.265 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Product/Quality - 0 - 200 581 application/json;+charset=utf-8 61.2936ms
+2022-04-15 15:19:52.019 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 15:19:52.042 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 15:19:52.045 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 15:19:52.045 +03:00 [INF] Hosting environment: Development
+2022-04-15 15:19:52.045 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 15:19:52.282 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 15:19:52.459 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 178.5371ms
+2022-04-15 15:19:52.478 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 15:19:52.483 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 5.0893ms
+2022-04-15 15:19:52.897 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 15:19:53.066 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 168.6904ms
+2022-04-15 15:20:00.123 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7170/api/Product/Quality/Add application/json 96
+2022-04-15 15:20:00.128 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 15:20:00.149 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:20:00.239 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:20:00.294 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 139.8285ms
+2022-04-15 15:20:00.295 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 15:20:00.295 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7170/api/Product/Quality/Add application/json 96 - 400 249 application/problem+json;+charset=utf-8 172.2624ms
+2022-04-15 15:20:41.157 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7170/api/Product/Quality/Add application/json 97
+2022-04-15 15:20:41.161 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 15:20:41.162 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:20:41.169 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 15:20:41.169 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 7.7464ms
+2022-04-15 15:20:41.169 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 15:20:41.169 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7170/api/Product/Quality/Add application/json 97 - 400 463 application/problem+json;+charset=utf-8 12.8019ms
+2022-04-15 15:21:26.714 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7170/api/Product/Quality/Add application/json 58
+2022-04-15 15:21:26.715 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 15:21:26.715 +03:00 [INF] Route matched with {action = "Add", controller = "Quality"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Quality) on controller TradeMarket.Product.Controllers.QualityController (TradeMarket.Product).
+2022-04-15 15:21:27.593 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 15:21:27.948 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `qualities` (`Quality`)
+VALUES (@p0);
+SELECT `Id`
+FROM `qualities`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2022-04-15 15:21:27.990 +03:00 [INF] Quality: Id:3| Quality:Качественно has been added
+2022-04-15 15:21:27.993 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2022-04-15 15:21:27.994 +03:00 [INF] Executed action TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product) in 1279.7665ms
+2022-04-15 15:21:27.995 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.QualityController.Add (TradeMarket.Product)'
+2022-04-15 15:21:27.998 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7170/api/Product/Quality/Add application/json 58 - 200 4 application/json;+charset=utf-8 1283.4281ms
+2022-04-15 17:03:14.509 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 17:03:14.535 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 17:03:14.538 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 17:03:14.538 +03:00 [INF] Hosting environment: Development
+2022-04-15 17:03:14.539 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 17:03:14.723 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 17:03:14.916 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 195.0407ms
+2022-04-15 17:03:14.929 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 17:03:14.934 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 4.7169ms
+2022-04-15 17:03:15.151 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 17:03:15.318 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 167.1272ms
+2022-04-15 17:04:41.452 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 205
+2022-04-15 17:04:41.457 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:04:41.489 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:04:41.671 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:04:41.728 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 233.8543ms
+2022-04-15 17:04:41.731 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:04:41.731 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 205 - 400 345 application/problem+json;+charset=utf-8 279.3030ms
+2022-04-15 17:04:58.432 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 204
+2022-04-15 17:04:58.436 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:04:58.436 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:04:58.442 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:04:58.443 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 6.3334ms
+2022-04-15 17:04:58.443 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:04:58.443 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 204 - 400 600 application/problem+json;+charset=utf-8 10.8478ms
+2022-04-15 17:05:34.677 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 204
+2022-04-15 17:05:34.677 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:05:34.677 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:05:34.678 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:05:34.678 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.7848ms
+2022-04-15 17:05:34.678 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:05:34.678 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 204 - 400 600 application/problem+json;+charset=utf-8 1.1785ms
+2022-04-15 17:07:14.125 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 417
+2022-04-15 17:07:14.125 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:07:14.126 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:07:14.141 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:07:14.141 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 15.7045ms
+2022-04-15 17:07:14.141 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:07:14.141 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 417 - 400 522 application/problem+json;+charset=utf-8 16.1964ms
+2022-04-15 17:08:31.854 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 961
+2022-04-15 17:08:31.855 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:08:31.855 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:08:31.873 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:08:31.875 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 20.1802ms
+2022-04-15 17:08:31.875 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:08:31.875 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 961 - 400 1422 application/problem+json;+charset=utf-8 20.6479ms
+2022-04-15 17:09:34.252 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 854
+2022-04-15 17:09:34.252 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:09:34.252 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:09:34.253 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:09:34.253 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.9292ms
+2022-04-15 17:09:34.253 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:09:34.254 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 854 - 400 1251 application/problem+json;+charset=utf-8 1.3035ms
+2022-04-15 17:09:49.323 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 826
+2022-04-15 17:09:49.324 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:09:49.324 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:09:49.325 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:09:49.325 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 1.1972ms
+2022-04-15 17:09:49.325 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:09:49.325 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 826 - 400 1251 application/problem+json;+charset=utf-8 1.8344ms
+2022-04-15 17:10:18.392 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 205
+2022-04-15 17:10:18.392 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:10:18.392 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:10:18.392 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:10:18.393 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.6722ms
+2022-04-15 17:10:18.393 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:10:18.393 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 205 - 400 600 application/problem+json;+charset=utf-8 1.1837ms
+2022-04-15 17:12:49.982 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 463
+2022-04-15 17:12:49.982 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:12:49.982 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:12:49.983 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:12:49.983 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.9272ms
+2022-04-15 17:12:49.983 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:12:49.983 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 463 - 400 4045 application/problem+json;+charset=utf-8 1.3404ms
+2022-04-15 17:13:07.818 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 451
+2022-04-15 17:13:07.819 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:13:07.819 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:13:07.824 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:13:07.824 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 5.1126ms
+2022-04-15 17:13:07.824 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:13:07.824 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 451 - 400 4045 application/problem+json;+charset=utf-8 6.2095ms
+2022-04-15 17:20:54.187 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 464
+2022-04-15 17:20:54.187 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:20:54.187 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:20:54.189 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:20:54.189 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 2.172ms
+2022-04-15 17:20:54.189 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:20:54.190 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 464 - 400 4045 application/problem+json;+charset=utf-8 2.9071ms
+2022-04-15 17:21:03.166 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 466
+2022-04-15 17:21:03.166 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:21:03.166 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:21:03.166 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:21:03.166 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.5395ms
+2022-04-15 17:21:03.166 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:21:03.166 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 466 - 400 4045 application/problem+json;+charset=utf-8 0.8658ms
+2022-04-15 17:21:51.431 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 470
+2022-04-15 17:21:51.431 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:21:51.431 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:21:51.432 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:21:51.432 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.5441ms
+2022-04-15 17:21:51.432 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:21:51.432 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 470 - 400 4045 application/problem+json;+charset=utf-8 0.9413ms
+2022-04-15 17:22:25.560 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 470
+2022-04-15 17:22:25.560 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:22:25.560 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:22:25.574 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:22:25.578 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 17.2543ms
+2022-04-15 17:22:25.578 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:22:25.578 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 470 - 400 4045 application/problem+json;+charset=utf-8 18.2143ms
+2022-04-15 17:23:43.857 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 470
+2022-04-15 17:23:43.857 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:23:43.857 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:23:43.857 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:23:43.857 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.5228ms
+2022-04-15 17:23:43.857 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:23:43.858 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 470 - 400 522 application/problem+json;+charset=utf-8 0.9147ms
+2022-04-15 17:24:40.834 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 510
+2022-04-15 17:24:40.834 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:24:40.834 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:24:40.835 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:24:40.835 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.7956ms
+2022-04-15 17:24:40.835 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:24:40.835 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 510 - 400 929 application/problem+json;+charset=utf-8 1.1876ms
+2022-04-15 17:25:31.105 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 513
+2022-04-15 17:25:31.105 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:25:31.105 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:25:31.106 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:25:31.106 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.4946ms
+2022-04-15 17:25:31.106 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:25:31.106 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 513 - 400 796 application/problem+json;+charset=utf-8 0.9016ms
+2022-04-15 17:25:47.373 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 511
+2022-04-15 17:25:47.373 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:25:47.373 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:25:47.373 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:25:47.374 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 1.5382ms
+2022-04-15 17:25:47.374 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:25:47.375 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 511 - 400 929 application/problem+json;+charset=utf-8 1.9417ms
+2022-04-15 17:26:23.398 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 527
+2022-04-15 17:26:23.398 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:26:23.398 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:26:23.399 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:26:23.399 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.4679ms
+2022-04-15 17:26:23.399 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:26:23.399 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 527 - 400 1013 application/problem+json;+charset=utf-8 0.8305ms
+2022-04-15 17:27:12.138 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 526
+2022-04-15 17:27:12.138 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:27:12.138 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:27:12.139 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:27:12.139 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.9634ms
+2022-04-15 17:27:12.139 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:27:12.139 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 526 - 400 665 application/problem+json;+charset=utf-8 1.3720ms
+2022-04-15 17:27:37.900 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 537
+2022-04-15 17:27:37.901 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:27:37.901 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:27:37.902 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:27:37.902 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.4772ms
+2022-04-15 17:27:37.902 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:27:37.902 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 537 - 400 1013 application/problem+json;+charset=utf-8 1.3746ms
+2022-04-15 17:29:12.042 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 527
+2022-04-15 17:29:12.042 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:29:12.042 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:29:12.043 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:29:12.043 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.5503ms
+2022-04-15 17:29:12.043 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:29:12.043 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 527 - 400 929 application/problem+json;+charset=utf-8 1.2106ms
+2022-04-15 17:30:26.396 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 535
+2022-04-15 17:30:26.396 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:30:26.396 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:30:26.396 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:30:26.396 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.4754ms
+2022-04-15 17:30:26.396 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:30:26.396 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 535 - 400 929 application/problem+json;+charset=utf-8 0.8498ms
+2022-04-15 17:33:32.430 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 212
+2022-04-15 17:33:32.430 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:33:32.430 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:33:32.430 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:33:32.430 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.424ms
+2022-04-15 17:33:32.430 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:33:32.430 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 212 - 400 600 application/problem+json;+charset=utf-8 0.9875ms
+2022-04-15 17:34:24.085 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 928
+2022-04-15 17:34:24.085 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:34:24.085 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:34:24.086 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:34:24.087 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 1.7553ms
+2022-04-15 17:34:24.087 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:34:24.087 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 928 - 400 1422 application/problem+json;+charset=utf-8 2.2449ms
+2022-04-15 17:34:55.658 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 888
+2022-04-15 17:34:55.658 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:34:55.659 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:34:55.659 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:34:55.660 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.7657ms
+2022-04-15 17:34:55.660 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:34:55.660 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 888 - 400 581 application/problem+json;+charset=utf-8 1.6516ms
+2022-04-15 17:35:32.742 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 874
+2022-04-15 17:35:32.743 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:35:32.743 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:35:32.745 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:35:32.745 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 2.6945ms
+2022-04-15 17:35:32.745 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:35:32.746 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 874 - 400 277 application/problem+json;+charset=utf-8 3.0574ms
+2022-04-15 17:35:59.975 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 874
+2022-04-15 17:35:59.976 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:35:59.976 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:35:59.976 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:35:59.977 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.7938ms
+2022-04-15 17:35:59.977 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:35:59.977 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 874 - 400 924 application/problem+json;+charset=utf-8 1.4822ms
+2022-04-15 17:36:08.083 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 876
+2022-04-15 17:36:08.083 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:36:08.083 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:36:08.084 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 17:36:08.085 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 1.3577ms
+2022-04-15 17:36:08.085 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:36:08.085 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 876 - 400 277 application/problem+json;+charset=utf-8 1.7177ms
+2022-04-15 17:36:50.889 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 767
+2022-04-15 17:36:50.890 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:36:50.891 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:36:52.046 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 17:36:52.518 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@p0='?' (Size = 45), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (Size = 45), @p4='?' (Size = 45), @p5='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `characters` (`Character`)
+VALUES (@p0);
+SELECT `Id`
+FROM `characters`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `games` (`Game`)
+VALUES (@p1);
+SELECT `Id`
+FROM `games`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `qualities` (`Quality`)
+VALUES (@p2);
+SELECT `Id`
+FROM `qualities`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `rarities` (`Rarity`)
+VALUES (@p3);
+SELECT `Id`
+FROM `rarities`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `slots` (`Slot`)
+VALUES (@p4);
+SELECT `Id`
+FROM `slots`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `types` (`Type`)
+VALUES (@p5);
+SELECT `Id`
+FROM `types`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2022-04-15 17:36:52.546 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p6='?' (Size = 200), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `items` (`description`, `idcharacter`, `idgame`, `idquality`, `idrarity`, `idslot`, `idtype`, `name`)
+VALUES (@p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+SELECT `Id`
+FROM `items`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2022-04-15 17:36:52.567 +03:00 [INF] Item: Id:2 | Name:asdasddas | Character:2 | Game:4 | Quality:4 | Rarity:2 | Slot:string | Type:2 has been added
+2022-04-15 17:36:52.570 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2022-04-15 17:36:52.570 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 1679.1111ms
+2022-04-15 17:36:52.570 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:36:52.574 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Product/Item/Add application/json-patch+json 767 - 200 4 application/json;+charset=utf-8 1684.5217ms
+2022-04-15 17:38:30.327 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 822
+2022-04-15 17:38:30.327 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:38:30.328 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 17:38:30.370 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 17:38:30.378 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 45), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (Size = 45), @p4='?' (Size = 45), @p5='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `characters` (`Character`)
+VALUES (@p0);
+SELECT `Id`
+FROM `characters`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `games` (`Game`)
+VALUES (@p1);
+SELECT `Id`
+FROM `games`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `qualities` (`Quality`)
+VALUES (@p2);
+SELECT `Id`
+FROM `qualities`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `rarities` (`Rarity`)
+VALUES (@p3);
+SELECT `Id`
+FROM `rarities`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `slots` (`Slot`)
+VALUES (@p4);
+SELECT `Id`
+FROM `slots`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `types` (`Type`)
+VALUES (@p5);
+SELECT `Id`
+FROM `types`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2022-04-15 17:38:30.380 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p6='?' (Size = 200), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `items` (`description`, `idcharacter`, `idgame`, `idquality`, `idrarity`, `idslot`, `idtype`, `name`)
+VALUES (@p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+SELECT `Id`
+FROM `items`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2022-04-15 17:38:30.413 +03:00 [INF] Item: Id:3 | Name:asdasddas | Character:3 | Game:5 | Quality:5 | Rarity:3 | Slot:string | Type:3 has been added
+2022-04-15 17:38:30.413 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2022-04-15 17:38:30.414 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 85.7091ms
+2022-04-15 17:38:30.414 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 17:38:30.414 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 822 - 200 4 application/json;+charset=utf-8 86.9981ms
+2022-04-15 18:00:57.005 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 815
+2022-04-15 18:00:57.005 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:00:57.005 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 18:00:57.006 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 18:00:57.006 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 1.0753ms
+2022-04-15 18:00:57.006 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:00:57.006 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 815 - 400 449 application/problem+json;+charset=utf-8 1.5492ms
+2022-04-15 18:01:14.966 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 799
+2022-04-15 18:01:14.966 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:01:14.966 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 18:01:14.966 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 18:01:14.967 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.6878ms
+2022-04-15 18:01:14.967 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:01:14.967 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 799 - 400 817 application/problem+json;+charset=utf-8 0.9893ms
+2022-04-15 18:01:45.004 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 806
+2022-04-15 18:01:45.004 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:01:45.004 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 18:01:45.017 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 18:01:45.026 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 45), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (Size = 45), @p4='?' (Size = 45), @p5='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `characters` (`Character`)
+VALUES (@p0);
+SELECT `Id`
+FROM `characters`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `games` (`Game`)
+VALUES (@p1);
+SELECT `Id`
+FROM `games`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `qualities` (`Quality`)
+VALUES (@p2);
+SELECT `Id`
+FROM `qualities`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `rarities` (`Rarity`)
+VALUES (@p3);
+SELECT `Id`
+FROM `rarities`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `slots` (`Slot`)
+VALUES (@p4);
+SELECT `Id`
+FROM `slots`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `types` (`Type`)
+VALUES (@p5);
+SELECT `Id`
+FROM `types`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2022-04-15 18:01:45.031 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p6='?' (Size = 200), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `items` (`description`, `idcharacter`, `idgame`, `idquality`, `idrarity`, `idslot`, `idtype`, `name`)
+VALUES (@p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+SELECT `Id`
+FROM `items`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2022-04-15 18:01:45.037 +03:00 [INF] Item: Id:4 | Name:asdasddas | Character:4 | Game:6 | Quality:6 | Rarity:4 | Slot: | Type:4 has been added
+2022-04-15 18:01:45.037 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2022-04-15 18:01:45.037 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 33.0828ms
+2022-04-15 18:01:45.037 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:01:45.038 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 806 - 200 4 application/json;+charset=utf-8 33.4216ms
+2022-04-15 18:21:41.979 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 433
+2022-04-15 18:21:41.979 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:21:41.979 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 18:21:41.979 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-04-15 18:21:41.979 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 0.519ms
+2022-04-15 18:21:41.979 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:21:41.979 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 433 - 400 522 application/problem+json;+charset=utf-8 0.8507ms
+2022-04-15 18:27:53.502 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 18:27:53.526 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 18:27:53.529 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 18:27:53.530 +03:00 [INF] Hosting environment: Development
+2022-04-15 18:27:53.530 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 18:27:53.725 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 18:27:53.937 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 215.7622ms
+2022-04-15 18:27:53.955 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 18:27:53.958 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 2.6635ms
+2022-04-15 18:27:54.740 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 18:27:55.063 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 323.2857ms
+2022-04-15 18:28:04.343 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 433
+2022-04-15 18:28:04.348 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:28:04.369 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 18:28:05.316 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 18:28:05.745 +03:00 [ERR] Failed executing DbCommand (38ms) [Parameters=[@p0='?' (Size = 45), @p1='?' (Size = 45), @p2='?' (Size = 45), @p3='?' (Size = 45), @p4='?' (Size = 45), @p5='?' (Size = 45)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `characters` (`Character`)
+VALUES (@p0);
+SELECT `Id`
+FROM `characters`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `games` (`Game`)
+VALUES (@p1);
+SELECT `Id`
+FROM `games`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `qualities` (`Quality`)
+VALUES (@p2);
+SELECT `Id`
+FROM `qualities`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `rarities` (`Rarity`)
+VALUES (@p3);
+SELECT `Id`
+FROM `rarities`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `slots` (`Slot`)
+VALUES (@p4);
+SELECT `Id`
+FROM `slots`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+
+INSERT INTO `types` (`Type`)
+VALUES (@p5);
+SELECT `Id`
+FROM `types`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2022-04-15 18:28:05.843 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'TradeMarket.Product.sakila.iteminfoContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Column 'Character' cannot be null
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in /_/src/MySqlConnector/Core/ServerSession.cs:line 954
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 44
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 127
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 456
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 330
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 323
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Column 'Character' cannot be null
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsyncAwaited(ValueTask`1 task) in /_/src/MySqlConnector/Core/ServerSession.cs:line 954
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 44
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 127
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 456
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 330
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 323
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-04-15 18:28:05.845 +03:00 [ERR] An error occurred while saving the entity changes. See the inner exception for details.
+2022-04-15 18:28:05.846 +03:00 [INF] Item: Id:0 | Name:asdasddas | Character:0 | Game:0 | Quality:0 | Rarity:0 | Slot: | Type:0 has been added
+2022-04-15 18:28:05.854 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2022-04-15 18:28:05.878 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 1502.5255ms
+2022-04-15 18:28:05.878 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:28:05.882 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 433 - 200 4 application/json;+charset=utf-8 1538.5745ms
+2022-04-15 18:29:33.527 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 177
+2022-04-15 18:29:33.531 +03:00 [INF] Executing endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:29:33.531 +03:00 [INF] Route matched with {action = "Add", controller = "Item"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] Add(TradeMarket.Product.sakila.Item) on controller TradeMarket.Product.Controllers.ItemController (TradeMarket.Product).
+2022-04-15 18:29:33.580 +03:00 [INF] Entity Framework Core 6.0.3 initialized 'iteminfoContext' using provider 'Pomelo.EntityFrameworkCore.MySql:6.0.1' with options: using lazy loading proxies ServerVersion 8.0.28-mysql 
+2022-04-15 18:29:33.596 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 200), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `items` (`description`, `idcharacter`, `idgame`, `idquality`, `idrarity`, `idslot`, `idtype`, `name`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT `Id`
+FROM `items`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+2022-04-15 18:29:33.643 +03:00 [INF] Item: Id:5 | Name:asdasddas | Character:1 | Game:1 | Quality:1 | Rarity:1 | Slot: | Type:1 has been added
+2022-04-15 18:29:33.643 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2022-04-15 18:29:33.644 +03:00 [INF] Executed action TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product) in 112.7992ms
+2022-04-15 18:29:33.644 +03:00 [INF] Executed endpoint 'TradeMarket.Product.Controllers.ItemController.Add (TradeMarket.Product)'
+2022-04-15 18:29:33.644 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7170/api/Product/Item/Add application/json 177 - 200 4 application/json;+charset=utf-8 117.1246ms
+2022-04-15 19:03:40.991 +03:00 [INF] Now listening on: https://localhost:7170
+2022-04-15 19:03:41.021 +03:00 [INF] Now listening on: http://localhost:5170
+2022-04-15 19:03:41.024 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-15 19:03:41.025 +03:00 [INF] Hosting environment: Development
+2022-04-15 19:03:41.025 +03:00 [INF] Content root path: C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\
+2022-04-15 19:03:41.316 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-04-15 19:03:41.738 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 425.0232ms
+2022-04-15 19:03:41.754 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2022-04-15 19:03:41.756 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 2.5708ms
+2022-04-15 19:03:42.045 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-04-15 19:03:42.193 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 146.9661ms

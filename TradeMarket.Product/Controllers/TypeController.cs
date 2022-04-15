@@ -39,27 +39,27 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("Allbyexpression")]
-        public async Task<List<Typeofitem>> GetAllByExpression(string Type)
+        public async Task<List<Typeofitem>> GetAllByExpression([FromBody] string type)
         {
-            return await _mediator.Send(new BaseGetAllByExpression.Query<Typeofitem>((n) => n.Type1 == Type));
+            return await _mediator.Send(new BaseGetAllByExpression.Query<Typeofitem>((n) => n.Type1 == type));
 
         }
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPost("Add")]
-        public async Task<bool> Add(Typeofitem Type)
+        public async Task<bool> Add([FromBody] Typeofitem type)
         {
-            return await _mediator.Send(new BaseAdd.Command<Typeofitem>(Type));
+            return await _mediator.Send(new BaseAdd.Command<Typeofitem>(type));
         }
 
-        [HttpDelete("Remove")]
+        [HttpDelete("Remove/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<bool> Remove(int Id)
+        public async Task<bool> Remove(int id)
         {
-            return await _mediator.Send(new BaseRemove.Command<Typeofitem>(Id));
+            return await _mediator.Send(new BaseRemove.Command<Typeofitem>(id));
 
         }
 
@@ -67,9 +67,9 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("RemoveRange")]
-        public async Task<bool> RemoveRange(int[] Types)
+        public async Task<bool> RemoveRange([FromBody] int[] types)
         {
-            return await _mediator.Send(new BaseRemoveRange.Command<Typeofitem>(Types));
+            return await _mediator.Send(new BaseRemoveRange.Command<Typeofitem>(types));
 
         }
 
@@ -77,9 +77,9 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("Update")]
-        public async Task<bool> Update(Typeofitem Type)
+        public async Task<bool> Update([FromBody] Typeofitem type)
         {
-            return await _mediator.Send(new BaseUpdate.Command<Typeofitem>(Type));
+            return await _mediator.Send(new BaseUpdate.Command<Typeofitem>(type));
 
         }
     }
