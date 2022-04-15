@@ -41,27 +41,27 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("Allbyexpression")]
-        public async Task<List<Game>> GetAllByExpression(string Game)
+        public async Task<List<Game>> GetAllByExpression([FromBody] string game)
         {
-            return await _mediator.Send(new BaseGetAllByExpression.Query<Game>((n) => n.Game1 == Game));
+            return await _mediator.Send(new BaseGetAllByExpression.Query<Game>((n) => n.Game1 == game));
 
         }
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPost("Add")]
-        public async Task<bool> Add(Game game)
+        public async Task<bool> Add([FromBody] Game game)
         {
             return await _mediator.Send(new BaseAdd.Command<Game>(game));
         }
 
-        [HttpDelete("Remove")]
+        [HttpDelete("Remove/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<bool> Remove(int Id)
+        public async Task<bool> Remove(int id)
         {
-            return await _mediator.Send(new BaseRemove.Command<Game>(Id));
+            return await _mediator.Send(new BaseRemove.Command<Game>(id));
 
         }
 
@@ -69,7 +69,7 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("RemoveRange")]
-        public async Task<bool> RemoveRange(int[] games)
+        public async Task<bool> RemoveRange([FromBody] int[] games)
         {
             return await _mediator.Send(new BaseRemoveRange.Command<Game>(games));
 
@@ -79,7 +79,7 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("Update")]
-        public async Task<bool> Update(Game game)
+        public async Task<bool> Update([FromBody]Game game)
         {
             return await _mediator.Send(new BaseUpdate.Command<Game>(game));
 

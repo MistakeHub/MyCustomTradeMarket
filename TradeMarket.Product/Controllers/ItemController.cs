@@ -40,27 +40,27 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("Allbyexpression")]
-        public async Task<List<Item>> GetAllByExpression(string Item)
+        public async Task<List<Item>> GetAllByExpression([FromBody] string item)
         {
-            return await _mediator.Send(new BaseGetAllByExpression.Query<Item>((n) => n.Name == Item));
+            return await _mediator.Send(new BaseGetAllByExpression.Query<Item>((n) => n.Name == item));
 
         }
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPost("Add")]
-        public async Task<bool> Add(Item Item)
+        public async Task<bool> Add([FromBody] Item item)
         {
-            return await _mediator.Send(new BaseAdd.Command<Item>(Item));
+            return await _mediator.Send(new BaseAdd.Command<Item>(item));
         }
 
-        [HttpDelete("Remove")]
+        [HttpDelete("Remove/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<bool> Remove(int Id)
+        public async Task<bool> Remove(int id)
         {
-            return await _mediator.Send(new BaseRemove.Command<Item>(Id));
+            return await _mediator.Send(new BaseRemove.Command<Item>(id));
 
         }
 
@@ -68,9 +68,9 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("RemoveRange")]
-        public async Task<bool> RemoveRange(int[] Items)
+        public async Task<bool> RemoveRange([FromBody] int[] items)
         {
-            return await _mediator.Send(new BaseRemoveRange.Command<Item>(Items));
+            return await _mediator.Send(new BaseRemoveRange.Command<Item>(items));
 
         }
 
@@ -78,9 +78,9 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("Update")]
-        public async Task<bool> Update(Item Item)
+        public async Task<bool> Update([FromBody] Item item)
         {
-            return await _mediator.Send(new BaseUpdate.Command<Item>(Item));
+            return await _mediator.Send(new BaseUpdate.Command<Item>(item));
 
         }
     }

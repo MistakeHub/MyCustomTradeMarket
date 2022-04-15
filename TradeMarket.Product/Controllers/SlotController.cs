@@ -39,27 +39,27 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("Allbyexpression")]
-        public async Task<List<Slot>> GetAllByExpression(string Slot)
+        public async Task<List<Slot>> GetAllByExpression([FromBody] string slot)
         {
-            return await _mediator.Send(new BaseGetAllByExpression.Query<Slot>((n) => n.Slot1 == Slot));
+            return await _mediator.Send(new BaseGetAllByExpression.Query<Slot>((n) => n.Slot1 == slot));
 
         }
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPost("Add")]
-        public async Task<bool> Add(Slot Slot)
+        public async Task<bool> Add([FromBody] Slot slot)
         {
-            return await _mediator.Send(new BaseAdd.Command<Slot>(Slot));
+            return await _mediator.Send(new BaseAdd.Command<Slot>(slot));
         }
 
-        [HttpDelete("Remove")]
+        [HttpDelete("Remove/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<bool> Remove(int Id)
+        public async Task<bool> Remove(int id)
         {
-            return await _mediator.Send(new BaseRemove.Command<Slot>(Id));
+            return await _mediator.Send(new BaseRemove.Command<Slot>(id));
 
         }
 
@@ -67,7 +67,7 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("RemoveRange")]
-        public async Task<bool> RemoveRange(int[] Slots)
+        public async Task<bool> RemoveRange([FromBody] int[] Slots)
         {
             return await _mediator.Send(new BaseRemoveRange.Command<Slot>(Slots));
 
@@ -77,9 +77,9 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("Update")]
-        public async Task<bool> Update(Slot Slot)
+        public async Task<bool> Update([FromBody] Slot slot)
         {
-            return await _mediator.Send(new BaseUpdate.Command<Slot>(Slot));
+            return await _mediator.Send(new BaseUpdate.Command<Slot>(slot));
 
         }
     }

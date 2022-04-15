@@ -20,7 +20,7 @@ namespace TradeMarket.Product.sakila
         public int Idtype { get; set; }
         public int Idrarity { get; set; }
         public string Description { get; set; } = null!;
-
+        
         public virtual Character IdcharacterNavigation { get; set; } 
         public virtual Game IdgameNavigation { get; set; } 
         public virtual Quality IdqualityNavigation { get; set; } 

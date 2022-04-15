@@ -39,7 +39,7 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("Allbyexpression")]
-        public async Task<List<Rarity>> GetAllByExpression(string rarity)
+        public async Task<List<Rarity>> GetAllByExpression([FromBody] string rarity)
         {
             return await _mediator.Send(new BaseGetAllByExpression.Query<Rarity>((n) => n.Rarity1 == rarity));
 
@@ -48,18 +48,18 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPost("Add")]
-        public async Task<bool> Add(Rarity Rarity)
+        public async Task<bool> Add([FromBody] Rarity rarity)
         {
-            return await _mediator.Send(new BaseAdd.Command<Rarity>(Rarity));
+            return await _mediator.Send(new BaseAdd.Command<Rarity>(rarity));
         }
 
-        [HttpDelete("Remove")]
+        [HttpDelete("Remove/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<bool> Remove(int Id)
+        public async Task<bool> Remove(int id)
         {
-            return await _mediator.Send(new BaseRemove.Command<Rarity>(Id));
+            return await _mediator.Send(new BaseRemove.Command<Rarity>(id));
 
         }
 
@@ -67,9 +67,9 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("RemoveRange")]
-        public async Task<bool> RemoveRange(int[] Rarities)
+        public async Task<bool> RemoveRange([FromBody] int[] rarities)
         {
-            return await _mediator.Send(new BaseRemoveRange.Command<Rarity>(Rarities));
+            return await _mediator.Send(new BaseRemoveRange.Command<Rarity>(rarities));
 
         }
 
@@ -77,9 +77,9 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("Update")]
-        public async Task<bool> Update(Rarity Rarity)
+        public async Task<bool> Update([FromBody] Rarity rarity)
         {
-            return await _mediator.Send(new BaseUpdate.Command<Rarity>(Rarity));
+            return await _mediator.Send(new BaseUpdate.Command<Rarity>(rarity));
 
         }
     }

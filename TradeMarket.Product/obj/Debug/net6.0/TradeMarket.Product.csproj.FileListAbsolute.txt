@@ -78,3 +78,5 @@ C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\bin\Debug\net6.0
 C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\bin\Debug\net6.0\MediatR.dll
 C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\bin\Debug\net6.0\MediatR.Contracts.dll
 C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Mistake22\source\repos\TradeMarket\TradeMarket.Product\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
