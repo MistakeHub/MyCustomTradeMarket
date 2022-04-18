@@ -77,7 +77,7 @@ namespace TradeMarket.Product.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status412PreconditionFailed)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpDelete("Update")]
+        [HttpPut("Update")]
         public async Task<bool> Update([FromBody] Quality quality)
         {
             return await _mediator.Send(new BaseUpdate.Command<Quality>(quality));
