@@ -1,3 +1,6 @@
 cat .gitignore
+<<<<<<< HEAD
 
+=======
+>>>>>>> 14902c74eb78462964a2d30f47f37be2beddb085
 **/logs
