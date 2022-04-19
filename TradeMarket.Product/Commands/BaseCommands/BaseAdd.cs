@@ -30,7 +30,7 @@ namespace TradeMarket.Product.Commands.GameCommands
                 private IMediator _mediator;
                 public async Task<bool> Handle(Command<T> request, CancellationToken cancellationToken)
                 {
-                    return await _repository.Add(request._entity);
+                    return await _repository.AddAsync(request._entity);
                 }
             }
         }

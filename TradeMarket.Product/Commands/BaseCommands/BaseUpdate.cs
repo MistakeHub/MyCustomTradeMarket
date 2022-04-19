@@ -31,7 +31,7 @@ namespace TradeMarket.Product.Commands.GameCommands
                 public async Task<bool> Handle(Command<T> request, CancellationToken cancellationToken)
                 {
 
-                    return await _repository.Update(request._entity);
+                    return await _repository.UpdateAsync(request._entity);
                 }
             }
         }

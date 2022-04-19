@@ -10,5 +10,7 @@ namespace TradeMarket.Product.Core.Domain.Entities
     {
 
         public TKey Id { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }

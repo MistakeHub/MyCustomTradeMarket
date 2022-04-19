@@ -26,7 +26,7 @@ namespace TradeMarket.Product.Commands.GameCommands
             
                 public async Task<List<T>> Handle(Query<T> request, CancellationToken cancellationToken)
                 {
-                    return await _repository.GetAll();
+                    return await _repository.GetAllAsync();
                 }
             }
         }

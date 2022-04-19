@@ -67,7 +67,7 @@ namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
             try
             {
                 var Entity = _context.FirstOrDefault(d => d.Id == Id);
-                _context.Remove(Entity);
+                Entity.IsDeleted = true;
 
                 SaveChanges();
                 Log.Information($"{Entity} has been removed");
@@ -105,7 +105,7 @@ namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
             try
             {
                 var entities = _context.Where(d => id.Equals(d.Id)).ToList();
-                _context.RemoveRange(entities);
+                entities.ForEach(c => c.IsDeleted = true);
                 SaveChanges();
                 Log.Information($" {typeof(T)}: {entities.Count()} entities has been removed");
             }

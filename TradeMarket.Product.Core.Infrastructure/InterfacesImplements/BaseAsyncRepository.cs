@@ -12,7 +12,7 @@ using TradeMarket.Product.Core.Domain.Entities;
 
 namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
 {
-    public class BaseAsyncRepository<T>:SaveContext,IAsyncRepository<T> where T:BaseEntity<int>
+    public class BaseAsyncRepository<T>:SaveContext,IAsyncRepository<T> where T : BaseEntity<int>
     {
         private DbSet<T> _context;
        
@@ -22,7 +22,7 @@ namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
             _context = context.Set<T>();
        }
 
-        public async Task<bool> Add(T entity)
+        public async Task<bool> AddAsync(T entity)
         {
 
             try 
@@ -44,17 +44,17 @@ namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
             return true;
         }
 
-        public async Task<List<T>> GetAll()
+        public async Task<List<T>> GetAllAsync()
         {
                 return await Task<T>.FromResult (_context.ToList());
         }
 
-        public async Task<List<T>> GetByExpression(Func<T,bool> expression)
+        public async Task<List<T>> GetByExpressionAsync(Func<T,bool> expression)
         {
            return await Task<T>.FromResult(_context.Where(expression).ToList());
         }
 
-        public async Task<T> GetById(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
           
                 var entity = _context.FirstOrDefault(d => d.Id == id);
@@ -63,14 +63,14 @@ namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
             return entity;
         }
 
-        public async Task<bool> Remove(int Id)
+        public async Task<bool> RemoveAsync(int Id)
         {
             try
             {
                 var Entity = _context.FirstOrDefault(d => d.Id == Id);
-                _context.Remove(Entity);
+                Entity.IsDeleted = true;
 
-               await SaveChangesAsync();
+                await SaveChangesAsync();
                 Log.Information($"{Entity} has been removed");
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
             return true;
         }
 
-        public async Task<bool> Update(T Entity)
+        public async Task<bool> UpdateAsync(T Entity)
         {
             try
             {
@@ -99,14 +99,14 @@ namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
             return true;
         }
 
-        public async Task<bool> RemoveRange(int[] id)
+        public async Task<bool> RemoveRangeAsync(int[] id)
         {
            
 
             try
             {
                 var entities = _context.Where(d => id.Equals(d.Id)).ToList();
-                _context.RemoveRange(entities);
+                entities.ForEach(c => c.IsDeleted = true);
                 await SaveChangesAsync();
                 Log.Information($" {typeof(T)}: {entities.Count()} entities has been removed");
             }

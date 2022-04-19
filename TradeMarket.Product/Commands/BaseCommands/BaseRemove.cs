@@ -32,7 +32,7 @@ namespace TradeMarket.Product.Commands.GameCommands
                 public async Task<bool> Handle(Command<T> request, CancellationToken cancellationToken)
                 {
 
-                    return await _repository.Remove(request.Id);
+                    return await _repository.RemoveAsync(request.Id);
                 }
             }
         }

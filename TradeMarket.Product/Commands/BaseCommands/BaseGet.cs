@@ -32,7 +32,7 @@ namespace TradeMarket.Product.Commands.GameCommands
                 private IAsyncRepository<T> _repository;
                 public async Task<T> Handle(Query<T> request, CancellationToken cancellationToken)
                 {
-                    return await _repository.GetById(request._id);
+                    return await _repository.GetByIdAsync(request._id);
                 }
             }
 
