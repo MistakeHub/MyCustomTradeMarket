@@ -45,7 +45,7 @@ namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
 
         public  List<T> GetAll()
         {
-            return  _context.ToList();
+            return  _context.AsNoTracking().ToList();
         }
 
         public List<T> GetByExpression(Func<T, bool> expression)
@@ -56,7 +56,7 @@ namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
         public T GetById(int id)
         {
 
-            var entity = _context.FirstOrDefault(d => d.Id == id);
+            var entity = _context.AsNoTracking().FirstOrDefault(d => d.Id == id);
 
             Log.Information($"Get Entity type {typeof(T)} with id:{id}");
             return entity;

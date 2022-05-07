@@ -46,18 +46,18 @@ namespace TradeMarket.Product.Core.Infrastructure.InterfacesImplements
 
         public async Task<List<T>> GetAllAsync()
         {
-                return await Task<T>.FromResult (_context.ToList());
+                return await Task<T>.FromResult (_context.AsNoTracking().ToList());
         }
 
         public async Task<List<T>> GetByExpressionAsync(Func<T,bool> expression)
         {
-           return await Task<T>.FromResult(_context.Where(expression).ToList());
+           return await Task<T>.FromResult(_context.AsNoTracking().Where(expression).ToList());
         }
 
         public async Task<T> GetByIdAsync(int id)
         {
           
-                var entity = _context.FirstOrDefault(d => d.Id == id);
+                var entity = _context.AsNoTracking().FirstOrDefault(d => d.Id == id);
 
             Log.Information($"Get Entity type {typeof(T)} with id:{id}");
             return entity;
